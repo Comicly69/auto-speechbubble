@@ -10,7 +10,7 @@ def generate_speechbubble(image):
     image = add_alpha_channel(image)
     
     bubble_width = int(image.width)
-    bubble_height = int(image.height * 0.2)
+    bubble_height = int(image.height * 0.28)
 
     bubble_image = Image.open('speechbubble.png').convert("RGBA")
     bubble_image = bubble_image.resize((bubble_width, bubble_height))
@@ -31,8 +31,9 @@ def add_speechbubble(image):
     
     bubble_image = Image.open('speechbubble.png').convert('RGBA')
     original_bubble_width, original_bubble_height = bubble_image.size
+    target_bubble_height = int(image.height * 0.22)
     bubble_width = image.width
-    bubble_height = int(original_bubble_height * (bubble_width / original_bubble_width))
+    bubble_height = target_bubble_height
     bubble_image = bubble_image.resize((bubble_width, bubble_height))
 
     new_image = Image.new('RGBA', (image.width, image.height + bubble_height), (0, 0, 0, 0))
@@ -40,3 +41,4 @@ def add_speechbubble(image):
     new_image.paste(bubble_image, (0, 0), mask=bubble_image)
 
     return new_image
+
