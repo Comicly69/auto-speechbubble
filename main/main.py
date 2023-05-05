@@ -7,7 +7,7 @@ from speechbubble import *
 from discord_upload import upload_to_discord
 import pyperclip
 
-WEBHOOK_URL = "https://discord.com/api/webhooks/1103710146888204409/hOsPZM0JLKfeUrdl3p5AY8BvxR2JnVtLo-xLDtL_f-71AMNbhF6G6h4eSu_TdkyJgauj"
+WEBHOOK_URL = "https://discord.com/api/webhooks/yourwebhookurl"
 
 def is_url_image(url):
     try:
